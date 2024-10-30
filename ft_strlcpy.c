@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcopy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttran <ttran@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:00:54 by ttran             #+#    #+#             */
-/*   Updated: 2024/10/30 13:27:38 by ttran            ###   ########.fr       */
+/*   Created: 2024/10/30 11:43:13 by ttran             #+#    #+#             */
+/*   Updated: 2024/10/30 11:43:21 by ttran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+	unsigned int	src_len;
+	unsigned int	i;
 
-int ft_isalpha(int c);
-int ft_isdigit(int c);
-int	ft_strlen(char *str);
-int	ft_strncmp(char *s1, char *s2, unsigned int n);
-#endif
+	src_len = 0;
+	i = 0;
+	while (src[src_len] != '\0')
+	{
+		if (i < size - 1)
+		{
+			dest[i] = src[src_len];
+			i++;
+		}
+		src_len++;
+	}
+	if (size > 0)
+		dest[i] = '\0';
+	return (i);
+}

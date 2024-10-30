@@ -6,13 +6,10 @@
 /*   By: ttran <ttran@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:08:33 by ttran             #+#    #+#             */
-/*   Updated: 2024/10/30 11:34:01 by ttran            ###   ########.fr       */
+/*   Updated: 2024/10/30 11:54:46 by ttran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdio.h>
-#include <string.h>
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -39,14 +36,3 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	return (len_dest + len_src);
 }
 
-int main(void)
-{
-    char *dest[4] = "fgegfg";
-    char *src = "haha";
-    unsigned int size = 3;
-
-    printf("This is the return: %u\n", ft_strlcat(dest, src, size));
-    printf("This is the return: %lu\n", strlcat(dest, src, size));
-
-    return (1);
-}
