@@ -52,13 +52,16 @@
 // {
 //     char c;
 //     c = 3;
-//     printf("\nResult when uppercase alphabet is passed: %d", isalnum(c));
+//     printf("\nResult when uppercase alphabet is passed: %d", ft_isalnum(c));
+//     printf("\nResult CORRECT: %d", isalnum(c));
 
 //     c = '9';
-//     printf("\nResult when lowercase alphabet is passed: %d", isalnum(c));
+//     printf("\nResult when lowercase alphabet is passed: %d", ft_isalnum(c));
+//     printf("\nResult CORRECT: %d", isalnum(c));
 
 //     c='+';
-//     printf("\nResult when non-alphabetic character is passed: %d", isalnum(c));
+//     printf("\nResult when non-alphabetic character is passed: %d", ft_isalnum(c));
+//     printf("\nResult CORRECT: %d", isalnum(c));
 
 //     return 0;
 // }
@@ -66,9 +69,6 @@
 // STRLEN TEST
 // put this line after the while loop
 // printf("This is the return %d\n", c);
-// #include <stdio.h>
-// #include <ctype.h>
-// #include <unistd.h>
 // int main(void)
 // {
 //     char message[] = "123456789";
@@ -77,7 +77,7 @@
 // }
 
 
-// ISPRINT TEST
+// FT_ISPRINT TEST
 // int main()
 // {
 //     char c;
@@ -93,9 +93,7 @@
 // }
 
 
-// STRLCAT TEST
-// #include <stdio.h>
-// #include <string.h>
+// FT_STRLCAT TEST
 // int main(void)
 // {
 //     char *dest[4] = "fgegfg";
@@ -103,7 +101,34 @@
 //     unsigned int size = 3;
 
 //     printf("This is the return: %u\n", ft_strlcat(dest, src, size));
-//     printf("This is the return: %lu\n", strlcat(dest, src, size));
+//     printf("This is CORRECT: %lu\n", strlcat(dest, src, size));
 
+//     return (1);
+// }
+
+
+// FT_TOUPPER TEST 
+// int main(void)
+// {
+//     int c = '\t';
+//     printf("This is the return: %d\n", ft_toupper(c));
+//     printf("This is CORRECT: %d\n", toupper(c));
+ 
+//     c = 'a';
+//     printf("This is the return: %d\n", ft_toupper(c));
+//     printf("This is CORRECT: %d\n", toupper(c));
+//     return (1);
+// }
+
+// FT_TOLOWER TEST 
+// int main(void)
+// {
+//     int c = '\t';
+//     printf("This is the return: %d\n", ft_tolower(c));
+//     printf("This is CORRECT: %d\n", tolower(c));
+ 
+//     c = 'a';
+//     printf("This is the return: %d\n", ft_tolower(c));
+//     printf("This is CORRECT: %d\n", tolower(c));
 //     return (1);
 // }

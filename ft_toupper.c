@@ -10,23 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 int ft_toupper(int c)
 {
-    if (ft_isalpha(c))
+    if (ft_isalpha(c) && c > 96 && c < 123)
         return (c - 32);
-    return (1);
-}
-
-int main(void)
-{
-    int c = '}';
-    printf("This is the return: %d\n", toupper(c));
- 
-    c = 'z';
-    printf("This is the return: %d\n", toupper(c));
-    return (1);
+    return (c);
 }
