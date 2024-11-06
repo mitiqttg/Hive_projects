@@ -6,13 +6,14 @@
 /*   By: ttran <ttran@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:00:47 by ttran             #+#    #+#             */
-/*   Updated: 2024/11/04 17:22:49 by ttran            ###   ########.fr       */
+/*   Updated: 2024/11/06 19:19:50 by ttran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
 #include <unistd.h>
+#include <string.h>
 
 // ISALPHA TEST
 // int main()
@@ -214,3 +215,26 @@
 
 //     return 0;
 // }
+
+void    *ft_memmove(void *s1, const void *s2, size_t n);
+
+int main()
+{
+    // char dest_str[] = "old shit";
+    // const char src_str[]  = "damn it dude";
+
+    // char dest[] = "old shit";
+    // const char src[]  = "damn it dude";
+
+    char str[100] = "Learningisfun"; 
+    char *dest_str, *src_str; 
+    dest_str = str; 
+    src_str = str; 
+
+    ft_memmove(dest_str, src_str, 9);
+    memmove(dest, src, 9);
+    // memmove(dest, src, 9);
+    printf("After memmove dest = %s, src = %s\n", dest_str, src_str);
+    printf("After CORRECT dest = %s, src = %s\n", dest, src);
+    return 0;
+}
