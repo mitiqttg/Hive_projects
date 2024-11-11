@@ -6,7 +6,7 @@
 /*   By: ttran <ttran@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:00:47 by ttran             #+#    #+#             */
-/*   Updated: 2024/11/06 19:19:50 by ttran            ###   ########.fr       */
+/*   Updated: 2024/11/11 12:37:38 by ttran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
-// ISALPHA TEST
+// -------------------------------ISALPHA TEST
 // int main()
 // {
 //     // return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
@@ -32,7 +34,7 @@
 //     return 0;
 // }
 
-// ISDIGIT TEST
+// -------------------------------ISDIGIT TEST
 // int main()
 // {
 //     char c;
@@ -48,7 +50,7 @@
 //     return 0;
 // }
 
-// ISALNUM TEST
+// -------------------------------ISALNUM TEST
 // int main()
 // {
 //     char c;
@@ -67,7 +69,7 @@
 //     return 0;
 // }
 
-// STRLEN TEST
+// --------------------------------STRLEN TEST
 // put this line after the while loop
 // printf("This is the return %d\n", c);
 // int main(void)
@@ -78,7 +80,7 @@
 // }
 
 
-// FT_ISPRINT TEST
+// --------------------------------FT_ISPRINT TEST
 // int main()
 // {
 //     char c;
@@ -94,7 +96,153 @@
 // }
 
 
-// FT_STRLCAT TEST
+// --------------------------------FT_STRCHR TEST
+// int main() {
+//     const char *str = "Hello, World!";
+//     char c = 'e';
+
+//     char *result = ft_strchr(str, c);
+//     char *result1 = ft_strchr(str, c);
+//     if (result != NULL) {
+//         printf("Character '%c' found at position: %ld\n", c, result - str);
+//         printf("CORRECT '%c' found at position: %ld\n", c, result1 - str);
+//     } else {
+//         printf("Character '%c' not found.\n", c);
+//     }
+
+//     return 0;
+// }
+
+// --------------------------------FT_STRRCHR TEST
+// int main() {
+//     const char *str = "Hello, WorldW!";
+//     char c = 'y';
+
+//     char *result = ft_strrchr(str, c);
+//     char *result1 = strrchr(str, c);
+//     if (result != NULL) {
+//         printf("Character '%c' found at position: %ld\n", c, result - str);
+//         printf("CORRECT '%c' found at position: %ld\n", c, result1 - str);
+//     } else {
+//         printf("Character '%c' not found.\n", c);
+//     }
+
+//     return 0;
+// }
+
+
+// --------------------------------FT_STRNSTR TEST
+// int main() {
+//     const char *haystack = "Hello, World!";
+//     const char *needle = "rl";
+//     size_t len = 10;
+
+//     char *result = ft_strnstr(haystack, needle, len);
+//     //char *result1 = strnstr(haystack, needle, len);
+//     if (result != NULL) {
+//         printf("Substring '%s' found at position: %ld\n", needle, result - haystack);
+//         printf("Substring '%s' found at position: %ld\n", needle, result1 - haystack);
+//     } else {
+//         printf("Substring '%s' not found within the first %zu characters.\n", needle, len);
+//     }
+
+//     return 0;
+// }
+
+void	ft_print_result(char const *s)
+{
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
+}
+
+int		main(int argc, const char *argv[])
+{
+	const char *str;
+	int			arg;
+
+	alarm(5);
+	if (argc == 1)
+		return (0);
+	else if ((arg = atoi(argv[1])) == 1)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "lorem", 15)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 2)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "ipsum", 15)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 3)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit lorem ipsum dolor", "ipsum", 35)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 4)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "", 10)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 5)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", 30)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 6)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "dol", 30)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 7)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "consectetur", 30)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 8)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "sit", 10)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 9)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 10)
+	{
+		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "dolor", 0)))
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	return (0);
+}
+
+
+
+// --------------------------------FT_STRLCAT TEST
 // int main(void)
 // {
 //     char *dest[4] = "fgegfg";
@@ -108,7 +256,7 @@
 // }
 
 
-// FT_TOUPPER TEST 
+// --------------------------------FT_TOUPPER TEST 
 // int main(void)
 // {
 //     int c = '\t';
@@ -121,7 +269,7 @@
 //     return (1);
 // }
 
-// FT_TOLOWER TEST 
+// ---------------------------------FT_TOLOWER TEST 
 // int main(void)
 // {
 //     int c = '\t';
@@ -134,7 +282,7 @@
 //     return (1);
 // }
 
-// FT_MEMSET TEST 
+// ---------------------------------FT_MEMSET TEST 
 
 // int main() {
 //     char buffer1[] = "ghghghghghghghghghghgh";
@@ -156,17 +304,18 @@
 //     return 0;
 // }
 
-// FT_MEMCPY TEST 
+// ---------------------------------FT_MEMCPY TEST 
 
-// int main() {
+// int main()
+// {
 //     char buffer1[] = "tientran";
 //     char buffer2[] = "oo";
     
 //     char b1[] = "tientran";
 //     char b2[] = "oo";
 
-//     ft_memcpy(buffer1, buffer2, 4);
-//     memcpy(b1, b2, 4);
+//     ft_memcpy(buffer1, buffer2, 7);
+//     memcpy(b1, b2, 7);
 
 //     for (size_t i = 0; i < sizeof(buffer1); i++) {
 //         printf("%c", buffer1[i]);
@@ -183,7 +332,8 @@
 //     return 0;
 // }
 
-// FT_MEMCHR TEST 
+
+// ----------------------------------FT_MEMCHR TEST 
 
 // int main()
 // {
@@ -216,25 +366,85 @@
 //     return 0;
 // }
 
-void    *ft_memmove(void *s1, const void *s2, size_t n);
 
-int main()
-{
-    // char dest_str[] = "old shit";
-    // const char src_str[]  = "damn it dude";
 
-    // char dest[] = "old shit";
-    // const char src[]  = "damn it dude";
+// ---------------------------------FT_MEMMOVE TEST 
+// int main()
+// {
+//     char dest_str[9] = "old stuf";
+//     const char src_str[]  = "make it dude";
 
-    char str[100] = "Learningisfun"; 
-    char *dest_str, *src_str; 
-    dest_str = str; 
-    src_str = str; 
+//     char dest[9] = "old stuf";
+//     const char src[]  = "make it dude";
 
-    ft_memmove(dest_str, src_str, 9);
-    memmove(dest, src, 9);
-    // memmove(dest, src, 9);
-    printf("After memmove dest = %s, src = %s\n", dest_str, src_str);
-    printf("After CORRECT dest = %s, src = %s\n", dest, src);
-    return 0;
-}
+//     ft_memmove(dest_str, src_str, 2);
+//     memmove(dest, src, 2);
+
+//     printf("After memmove dest = %s, src = %s\n", dest_str, src_str);
+//     printf("After CORRECT dest = %s, src = %s\n", dest, src);
+//     return 0;
+// }
+// #include <stdlib.h>
+// #include <unistd.h>
+// #include <string.h>
+// int		main(int argc, const char *argv[])
+// {
+// 	char	src[] = "lorem ipsum dolor sit amet";
+// 	char	*dest;
+// 	int		arg;
+
+// 	dest = src + 1;
+// 	alarm(5);
+// 	if (argc == 1)
+// 		return (0);
+// 	else if ((arg = atoi(argv[1])) == 1)
+// 	{
+// 		if (dest != ft_memmove(dest, "consectetur", 5))
+// 			write(1, "dest's adress was not returned\n", 31);
+// 		write(1, dest, 22);
+// 	}
+// 	else if (arg == 2)
+// 	{
+// 		if (dest != ft_memmove(dest, "con\0sec\0\0te\0tur", 10))
+// 			write(1, "dest's adress was not returned\n", 31);
+// 		write(1, dest, 22);
+// 	}
+// 	else if (arg == 3)
+// 	{
+// 		if (dest != ft_memmove(dest, src, 8))
+// 			write(1, "dest's adress was not returned\n", 31);
+// 		write(1, dest, 22);
+// 	}
+// 	else if (arg == 4)
+// 	{
+// 		if (src != ft_memmove(src, dest, 8))
+// 			write(1, "dest's adress was not returned\n", 31);
+// 		write(1, dest, 22);
+// 	}
+// 	else if (arg == 5)
+// 	{
+// 		if (src != ft_memmove(src, dest, 0))
+// 			write(1, "dest's adress was not returned\n", 31);
+// 		write(1, dest, 22);
+// 	}
+// 	return (0);
+// }
+
+// --------------------------------FT_MEMCMP TEST 
+// int main() 
+// {
+//    char str1[18];
+//    char str2[18];
+//    int ret;
+//    int ret1;
+
+//    memcpy(str1, "t\200", 3);
+//    memcpy(str2, "\0", 3);
+
+//    ret = ft_memcmp(str1, str2, 6);
+//    ret1 = memcmp(str1, str2, 6);
+//    printf("The return of ft_memcmp is: %d\n", ret);
+//    printf("The CORRECT return memcmp is: %d\n", ret1);
+
+//    return(0);
+// }

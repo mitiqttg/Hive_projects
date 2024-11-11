@@ -6,7 +6,7 @@
 /*   By: ttran <ttran@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:08:33 by ttran             #+#    #+#             */
-/*   Updated: 2024/10/30 11:54:46 by ttran            ###   ########.fr       */
+/*   Updated: 2024/11/11 11:27:48 by ttran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		dest[len_dest + i] = '\0';
 	return (len_dest + len_src);
 }
-

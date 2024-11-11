@@ -6,7 +6,20 @@
 /*   By: ttran <ttran@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:55:26 by ttran             #+#    #+#             */
-/*   Updated: 2024/11/04 15:55:28 by ttran            ###   ########.fr       */
+/*   Updated: 2024/11/11 12:14:29 by ttran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*ft_strrchr(const char *s, int c)
+{
+	const char	*last;
+
+	last = 0;
+	while (*s != '\0')
+	{
+		if (*s == (char)c)
+			last = s;
+		s++;
+	}
+	return ((char *)last);
+}

@@ -6,7 +6,13 @@
 #    By: ttran <ttran@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 16:01:16 by ttran             #+#    #+#              #
-#    Updated: 2024/10/29 12:26:57 by ttran            ###   ########.fr        #
+#    Updated: 2024/11/11 10:32:28 by ttran            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC = cc 
+CFLAGS = -Wall -Wextra -Werror
+OBJFILES = a.out
+
+clean:
+	rm -f $(OBJFILES) $(TARGET)
