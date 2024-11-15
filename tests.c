@@ -474,3 +474,32 @@
 
 //     return 0;
 // }
+
+// ---------------------------- FT_CALLOC TEST 
+// int main() {
+//     int *arr = (int *)my_calloc(5, sizeof(int));
+//     if (arr == NULL) {
+//         printf("Memory allocation failed!\n");
+//         return 1;
+//     }
+
+//     for (int i = 0; i < 5; i++) {
+//         printf("arr[%d] = %d\n", i, arr[i]);
+//     }
+
+//     free(arr);
+    
+//     int *arr1 = (int *)calloc(5, sizeof(int));
+//     if (arr1 == NULL) {
+//         printf("Memory allocation failed!\n");
+//         return 1;
+//     }
+
+//     for (int i = 0; i < 5; i++) {
+//         printf("Correct arr1[%d] = %d\n", i, arr1[i]);
+//     }
+
+//     free(arr1);
+
+//     return 0;
+// }
